@@ -9,11 +9,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import java.util.List;
 
 import io.github.lna.uas.lingkungansenicibiru.BuildConfig;
 import io.github.lna.uas.lingkungansenicibiru.R;
+import io.github.lna.uas.lingkungansenicibiru.adapter.JenisSeniAdapter;
 import io.github.lna.uas.lingkungansenicibiru.api.ApiClient;
 import io.github.lna.uas.lingkungansenicibiru.api.ApiService;
+import io.github.lna.uas.lingkungansenicibiru.model.JenisSeni;
 import io.github.lna.uas.lingkungansenicibiru.model.JenisSeniResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -50,7 +55,7 @@ public class JenisKesenianFragment extends Fragment {
         ApiService apiService = ApiClient.getClient().create(ApiService.class);
         Call<JenisSeniResponse> call = apiService.getJenisSeni(API_KEY);
 
-        call.enqueue(new Callback<JenisSeniResponse>() {
+        /*call.enqueue(new Callback<JenisSeniResponse>() {
             @Override
             public void onResponse(Call<JenisSeniResponse> call, Response<JenisSeniResponse> response) {
                 try{
@@ -67,9 +72,9 @@ public class JenisKesenianFragment extends Fragment {
                 progressDialog.dismiss();
                 Log.d("why?", "no connection");
             }
-        });
+        });*/
 
-        /*call.enqueue(new Callback<JenisSeniResponse>() {
+        call.enqueue(new Callback<JenisSeniResponse>() {
             @Override
             public void onResponse(Call<JenisSeniResponse> call, Response<JenisSeniResponse> response) {
                 try{
@@ -78,6 +83,7 @@ public class JenisKesenianFragment extends Fragment {
                     Log.d("response", response.body().toString());
                     recyclerView.setAdapter(new JenisSeniAdapter(jenisSenis, R.layout.adapter_list, getContext()));
                 }catch (Exception e){
+                    progressDialog.dismiss();
                     Log.d("ERROR", e.getMessage());
                     Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                 }
@@ -89,6 +95,5 @@ public class JenisKesenianFragment extends Fragment {
                 Toast.makeText(getContext(), getString(R.string.no_internet), Toast.LENGTH_LONG).show();
             }
         });
-        */
     }
 }

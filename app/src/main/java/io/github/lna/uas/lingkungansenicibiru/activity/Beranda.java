@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import butterknife.ButterKnife;
 import io.github.lna.uas.lingkungansenicibiru.R;
 import io.github.lna.uas.lingkungansenicibiru.adapter.SectionPageAdapter;
@@ -107,6 +108,7 @@ public class Beranda extends AppCompatActivity
         } else if (id == R.id.nav_rateus) {
 
         }
+
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
