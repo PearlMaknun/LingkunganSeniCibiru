@@ -26,8 +26,8 @@ public class JenisSeniAdapter extends RecyclerView.Adapter<JenisSeniAdapter.Jeni
 
         public JenisSeniViewHolder(View itemView) {
             super(itemView);
-            clayout = itemView.findViewById(R.id.main_adapter);
-            cjudul = itemView.findViewById(R.id.nama_kelurahan);
+           // clayout = itemView.findViewById(R.id.main_adapter);
+           // cjudul = itemView.findViewById(R.id.nama_kelurahan);
         }
     }
 
