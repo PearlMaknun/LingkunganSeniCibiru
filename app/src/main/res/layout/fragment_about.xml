@@ -8,36 +8,6 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:src="@drawable/pict_teras"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="lingkungan Seni Cibiru"
-            android:layout_margin="16dp"
-            android:textColor="black"
-            android:textAlignment="center"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pengembang Aplikasi : "
-            android:layout_margin="16dp"
-            android:textColor="black"
-            android:textAlignment="center"
-            android:textSize="20sp"/>
-    </LinearLayout>
-
 
 
 
