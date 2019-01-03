@@ -2,7 +2,8 @@ package io.github.lna.uas.lingkungansenicibiru.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +16,8 @@ import android.view.MenuItem;
 import butterknife.ButterKnife;
 import io.github.lna.uas.lingkungansenicibiru.R;
 import io.github.lna.uas.lingkungansenicibiru.adapter.SectionPageAdapter;
+import io.github.lna.uas.lingkungansenicibiru.fragment.AboutFragment;
+import io.github.lna.uas.lingkungansenicibiru.fragment.BerandaFragment;
 import io.github.lna.uas.lingkungansenicibiru.fragment.DiscoverFragment;
 import io.github.lna.uas.lingkungansenicibiru.fragment.JenisKesenianFragment;
 import io.github.lna.uas.lingkungansenicibiru.fragment.KelurahanFragment;
@@ -22,8 +25,11 @@ import io.github.lna.uas.lingkungansenicibiru.fragment.KelurahanFragment;
 public class Beranda extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private SectionPageAdapter sectionPageAdapter;
-    ViewPager viewpager;
+    /*private SectionPageAdapter sectionPageAdapter;
+    ViewPager viewpager;*/
+
+    //baru
+    Fragment fragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +39,12 @@ public class Beranda extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        sectionPageAdapter = new SectionPageAdapter(getSupportFragmentManager());
+        /*sectionPageAdapter = new SectionPageAdapter(getSupportFragmentManager());
         viewpager = findViewById(R.id.viewpager);
         setupViewPager(viewpager);
 
         TabLayout tabLayout = findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewpager);
+        tabLayout.setupWithViewPager(viewpager);*/
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -48,6 +54,11 @@ public class Beranda extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        if(savedInstanceState == null){
+            fragment = new BerandaFragment();
+            callFragment(fragment);
+        }
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -101,11 +112,13 @@ public class Beranda extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-
+            fragment = new BerandaFragment();
+            callFragment(fragment);
         } else if (id == R.id.nav_setting) {
 
         } else if (id == R.id.nav_about) {
-
+            fragment = new AboutFragment();
+            callFragment(fragment);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_rateus) {
@@ -116,4 +129,12 @@ public class Beranda extends AppCompatActivity
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void callFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content, fragment)
+                .commit();
+    }
+
 }

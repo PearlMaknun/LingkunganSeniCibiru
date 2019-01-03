@@ -22,4 +22,11 @@
     <string name="discover">DISCOVER</string>
     <string name="district_picks">DISTRICT PICKS</string>
     <string name="based_on_art">BASED ON ART</string>
+    <string name="lu_lu_al_maknun">Lu\'lu\' Al-Maknun</string>
+    <string name="nabila_siti_r">Nabila Siti R.</string>
+    <string name="wha_wha_adytoma">Wha Wha Adytoma</string>
+    <string name="desk_app">Aplikasi yang membantu mencari informasi tentang berbagai jenis kesenian di daerah kecamtan Cibiru, Bandung</string>
+    <string name="versi">Versi : Beta 1.0</string>
+    <string name="about_application">About Application</string>
+    <string name="developer">Developer:</string>
 </resources>
