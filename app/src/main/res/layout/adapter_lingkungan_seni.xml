@@ -6,10 +6,7 @@
     android:orientation="vertical"
     android:layout_height="wrap_content"
     android:id="@+id/adapter_lingkungan"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp">
+    android:paddingBottom="5dp">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -53,21 +50,13 @@
                 android:textSize="15dp"
                 android:textColor="@color/black"
                 android:text="Jenis Kesenian"
-                android:layout_toRightOf="@id/image_lingkungan"
+                android:layout_toRightOf="@+id/image_lingkungan"
                 android:layout_below="@+id/nama_lingkungan"
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"
                 android:fontFamily="cursive"
-
                />
 
-
-
-
         </RelativeLayout>
-
     </android.support.v7.widget.CardView>
-
-
-
 </LinearLayout>

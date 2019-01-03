@@ -1,157 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_height="wrap_content"
     android:id="@+id/detail_jk"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
 
-    <android.support.v7.widget.CardView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="6dp"
-        card_view:cardUseCompatPadding="true">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp"
-            >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/detail_image_jk"
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/pict_teras"/>
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="6dp"
+                card_view:cardUseCompatPadding="true">
 
-            <TextView
-                android:id="@+id/nama_lingkungan"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="25dp"
-                android:textColor="@color/black"
-                android:fontFamily="cursive"
-                android:text="Nama Lingkungan Seni"
-                android:textAlignment="center"
-                style="@style/RtlOverlay.DialogWindowTitle.AppCompat"
-                />
-
-            <TextView
-                android:id="@+id/jenis_kesenian"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAlignment="gravity"
-                android:textSize="18dp"
-                android:textColor="@color/black"
-                android:text="Jenis Kesenian"/>
-
-            <TextView
-                android:id="@+id/tahun_kesenian"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="18dp"
-                android:textColor="@color/black"
-                android:text="Tahun"
-                android:textAlignment="gravity"
-                />
-
-            <TextView
-
-                android:id="@+id/pemimpin"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="18dp"
-                android:textColor="@color/black"
-                android:text="Pemimpin"
-                android:textAlignment="gravity"
-                />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-
-    <android.support.v7.widget.CardView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="6dp"
-                    card_view:cardUseCompatPadding="true"
-                    >
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                    <RelativeLayout
+                    <ImageView
+                        android:id="@+id/detail_image_jk"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/pict_teras" />
+
+                    <TextView
+                        android:id="@+id/nama_lingkungan"
+                        style="@style/RtlOverlay.DialogWindowTitle.AppCompat"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="10dp"
-                        >
+                        android:fontFamily="cursive"
+                        android:text="Nama Lingkungan Seni"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/jenis_kesenian"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Jenis Kesenian"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tahun_kesenian"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Tahun"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+
+                        android:id="@+id/pemimpin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Pemimpin"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="6dp"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
                     <ImageView
                         android:id="@+id/icon_loc"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/ic_launcher_loc"
-                        />
+                        android:src="@drawable/ic_location" />
+
                     <TextView
                         android:id="@+id/nama_lokasi"
-                        android:textSize="18dp"
-                        android:layout_marginLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/icon_loc"
                         android:text="Lokasi Kesenian"
                         android:textAlignment="gravity"
-                        android:layout_toRightOf="@+id/icon_loc"
-                        />
-                    </RelativeLayout>
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+                </RelativeLayout>
 
-    </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="6dp"
-        card_view:cardUseCompatPadding="true"
-        >
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="6dp"
+                card_view:cardUseCompatPadding="true">
 
-            <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-                <TextView
-                    android:id="@+id/desc"
-                    android:textSize="18dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Deskripsi"
-                    android:textAlignment="gravity"
-                    android:textColor="@color/black"
-                    style="@style/RtlOverlay.DialogWindowTitle.AppCompat"
-                    />
-
-                <TextView
-
-                    android:id="@+id/isi_deskripsi"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="@color/black"
-                    android:textAlignment="gravity"
-                    android:text="isi deskripsi kesenian di daerah cibiru bandung"
-                    android:textSize="15dp"/>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/desc"
+                        style="@style/RtlOverlay.DialogWindowTitle.AppCompat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deskripsi"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
 
+                    <TextView
 
-    </android.support.v7.widget.CardView>
+                        android:id="@+id/isi_deskripsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="isi deskripsi kesenian di daerah cibiru bandung"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
 
+                </LinearLayout>
 
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

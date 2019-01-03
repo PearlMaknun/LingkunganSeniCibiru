@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import butterknife.ButterKnife;
 import io.github.lna.uas.lingkungansenicibiru.R;
 import io.github.lna.uas.lingkungansenicibiru.adapter.SectionPageAdapter;
+import io.github.lna.uas.lingkungansenicibiru.fragment.DiscoverFragment;
 import io.github.lna.uas.lingkungansenicibiru.fragment.JenisKesenianFragment;
 import io.github.lna.uas.lingkungansenicibiru.fragment.KelurahanFragment;
 
@@ -51,10 +52,12 @@ public class Beranda extends AppCompatActivity
 
     private void setupViewPager(ViewPager viewPager) {
         SectionPageAdapter adapter = new SectionPageAdapter(getSupportFragmentManager());
-        String tab1 = String.format(getResources().getString(R.string.kelurahan));
-        String tab2 = String.format(getResources().getString(R.string.jeniskesenian));
-        adapter.addFragment(new KelurahanFragment(), tab1);
-        adapter.addFragment(new JenisKesenianFragment(), tab2);
+        String tab1 = String.format(getResources().getString(R.string.discover));
+        String tab2 = String.format(getResources().getString(R.string.kelurahan));
+        String tab3 = String.format(getResources().getString(R.string.jeniskesenian));
+        adapter.addFragment(new DiscoverFragment(), tab1);
+        adapter.addFragment(new KelurahanFragment(), tab2);
+        adapter.addFragment(new JenisKesenianFragment(), tab3);
         viewPager.setAdapter(adapter);
     }
 
