@@ -1,6 +1,7 @@
 package io.github.lna.uas.lingkungansenicibiru.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import io.github.lna.uas.lingkungansenicibiru.R;
+import io.github.lna.uas.lingkungansenicibiru.activity.ResultbyKelurahan;
 import io.github.lna.uas.lingkungansenicibiru.model.Kelurahan;
 
 public class KelurahanAdapter extends RecyclerView.Adapter<KelurahanAdapter.KelurahanViewHolder>{
@@ -52,26 +54,24 @@ public class KelurahanAdapter extends RecyclerView.Adapter<KelurahanAdapter.Kelu
     @Override
     public void onBindViewHolder(@NonNull KelurahanAdapter.KelurahanViewHolder holder, int position) {
         holder.cjudul.setText(kelurahanListList.get(position).getNamaKelurahan());
+        final String id = kelurahanListList.get(position).getIdKelurahan();
+        final String nama = kelurahanListList.get(position).getNamaKelurahan();
 
         holder.clayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                /*Intent i = new Intent(context, Beranda.class);
+                i.putExtra("menu", 1);
+                i.putExtra("tab", 2);
+                i.putExtra("id", id);
+                context.startActivity(i);*/
+                Intent i = new Intent(context, ResultbyKelurahan.class);
+                i.putExtra("id", id);
+                i.putExtra("kelurahan", nama);
+                context.startActivity(i);
             }
         });
     }
-    /*
-        public void getDetail(long id, String judul, String tanggalrilis, String sinopsis, String backdrop, String poster){
-            Intent goToDetail = new Intent(context, DetailActivity.class);
-            goToDetail.putExtra("id", id);
-            goToDetail.putExtra("judul", judul);
-            goToDetail.putExtra("tanggalrilis", tanggalrilis);
-            goToDetail.putExtra("sinopsis", sinopsis);
-            goToDetail.putExtra("backdrop", backdrop);
-            goToDetail.putExtra("poster", poster);
-            context.startActivity(goToDetail);
-        }
-    */
     @Override
     public int getItemCount() {
         return kelurahanListList.size();

@@ -33,6 +33,7 @@ public class KelurahanFragment extends Fragment {
     public KelurahanFragment() {
         // Required empty public constructor
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class KelurahanFragment extends Fragment {
         return view;
     }
 
-    public void getData(){
+    public void getData() {
 
         String message = getString(R.string.loading);
         progressDialog = ProgressDialog.show(getContext(), null, message, true, false);
@@ -58,12 +59,12 @@ public class KelurahanFragment extends Fragment {
         call.enqueue(new Callback<KelurahanResponse>() {
             @Override
             public void onResponse(Call<KelurahanResponse> call, Response<KelurahanResponse> response) {
-                try{
+                try {
                     progressDialog.dismiss();
                     final List<Kelurahan> kelurahans = response.body().getData();
                     Log.d("response", response.body().toString());
                     recyclerView.setAdapter(new KelurahanAdapter(kelurahans, R.layout.adapter_list, getContext()));
-                }catch (Exception e){
+                } catch (Exception e) {
                     progressDialog.dismiss();
                     Log.d("ERROR", e.getMessage());
                     Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();

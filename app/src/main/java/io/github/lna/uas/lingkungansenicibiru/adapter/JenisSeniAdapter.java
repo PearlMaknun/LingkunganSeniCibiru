@@ -1,6 +1,7 @@
 package io.github.lna.uas.lingkungansenicibiru.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import io.github.lna.uas.lingkungansenicibiru.R;
+import io.github.lna.uas.lingkungansenicibiru.activity.Beranda;
 import io.github.lna.uas.lingkungansenicibiru.model.JenisSeni;
 
 public class JenisSeniAdapter extends RecyclerView.Adapter<JenisSeniAdapter.JenisSeniViewHolder>{
@@ -56,7 +58,10 @@ public class JenisSeniAdapter extends RecyclerView.Adapter<JenisSeniAdapter.Jeni
         holder.clayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i = new Intent(context, Beranda.class);
+                i.putExtra("menu", 1);
+                i.putExtra("tab", 2);
+                context.startActivity(i);
             }
         });
     }

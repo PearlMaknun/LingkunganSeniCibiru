@@ -59,6 +59,22 @@ public class Beranda extends AppCompatActivity
             fragment = new BerandaFragment();
             callFragment(fragment);
         }
+
+        /*if (getIntent().getStringExtra("menu") != null) {
+            switch (getIntent().getStringExtra("menu")) {
+                case "1":
+                    Bundle bundle = new Bundle();
+                    bundle.putString("tab", getIntent().getStringExtra("tab"));
+                    bundle.putString("id", getIntent().getStringExtra("id"));
+                    BerandaFragment fragment = new BerandaFragment();
+                    fragment.setArguments(bundle);
+                    callFragment(fragment);
+                    navigationView.getMenu().getItem(0).setChecked(true);
+                    break;
+                case "2":
+                    break;
+            }
+        }*/
     }
 
     private void setupViewPager(ViewPager viewPager) {

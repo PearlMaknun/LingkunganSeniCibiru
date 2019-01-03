@@ -55,25 +55,6 @@ public class JenisKesenianFragment extends Fragment {
         ApiService apiService = ApiClient.getClient().create(ApiService.class);
         Call<JenisSeniResponse> call = apiService.getJenisSeni(API_KEY);
 
-        /*call.enqueue(new Callback<JenisSeniResponse>() {
-            @Override
-            public void onResponse(Call<JenisSeniResponse> call, Response<JenisSeniResponse> response) {
-                try{
-                    progressDialog.dismiss();
-                    Log.d("response", response.body().toString());
-                }catch (Exception e){
-                    progressDialog.dismiss();
-                    Log.d("error", e.getMessage());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<JenisSeniResponse> call, Throwable t) {
-                progressDialog.dismiss();
-                Log.d("why?", "no connection");
-            }
-        });*/
-
         call.enqueue(new Callback<JenisSeniResponse>() {
             @Override
             public void onResponse(Call<JenisSeniResponse> call, Response<JenisSeniResponse> response) {
