@@ -7,8 +7,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label=
-            "@string/app_name"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -22,11 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ResultbyKelurahan">
-        </activity>
+        <activity android:name=".activity.ResultbyKelurahan"></activity>
         <activity android:name=".activity.ResultbyJenisSeni" />
-        <activity android:name=".activity.SearchResult"></activity>
-        <activity android:name=".activity.DetailJenisLingkungan"></activity>
+        <activity android:name=".activity.SearchResult" />
+        <activity android:name=".activity.DetailJenisLingkungan" />
+        <activity android:name=".activity.DetailCadangan"></activity>
     </application>
 
 </manifest>

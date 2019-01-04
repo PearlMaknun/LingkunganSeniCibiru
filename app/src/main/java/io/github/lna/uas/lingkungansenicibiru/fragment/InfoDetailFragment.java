@@ -35,7 +35,7 @@ public class InfoDetailFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_info_detail, container, false);
 
-        id = getArguments().getString("id");
+        //id = getArguments().getString("id");
 
         //getData();
 

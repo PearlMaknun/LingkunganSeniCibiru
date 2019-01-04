@@ -6,7 +6,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,12 +16,8 @@ import android.view.MenuItem;
 
 import butterknife.ButterKnife;
 import io.github.lna.uas.lingkungansenicibiru.R;
-import io.github.lna.uas.lingkungansenicibiru.adapter.SectionPageAdapter;
 import io.github.lna.uas.lingkungansenicibiru.fragment.AboutFragment;
 import io.github.lna.uas.lingkungansenicibiru.fragment.BerandaFragment;
-import io.github.lna.uas.lingkungansenicibiru.fragment.DiscoverFragment;
-import io.github.lna.uas.lingkungansenicibiru.fragment.JenisKesenianFragment;
-import io.github.lna.uas.lingkungansenicibiru.fragment.KelurahanFragment;
 
 public class Beranda extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -77,17 +72,6 @@ public class Beranda extends AppCompatActivity
                     break;
             }
         }*/
-    }
-
-    private void setupViewPager(ViewPager viewPager) {
-        SectionPageAdapter adapter = new SectionPageAdapter(getSupportFragmentManager());
-        String tab1 = String.format(getResources().getString(R.string.discover));
-        String tab2 = String.format(getResources().getString(R.string.kelurahan));
-        String tab3 = String.format(getResources().getString(R.string.jeniskesenian));
-        adapter.addFragment(new DiscoverFragment(), tab1);
-        adapter.addFragment(new KelurahanFragment(), tab2);
-        adapter.addFragment(new JenisKesenianFragment(), tab3);
-        viewPager.setAdapter(adapter);
     }
 
     @Override

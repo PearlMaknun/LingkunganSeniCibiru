@@ -28,9 +28,9 @@ public class DetailJenisLingkungan extends AppCompatActivity {
 
         id = getIntent().getStringExtra("id");
 
+        InfoDetailFragment infoDetailFragment = new InfoDetailFragment();
         Bundle bundle = new Bundle();
         bundle.putString("id", id);
-        InfoDetailFragment infoDetailFragment = new InfoDetailFragment();
         infoDetailFragment.setArguments(bundle);
 
         TabLayout tabLayout = findViewById(R.id.tabs);
