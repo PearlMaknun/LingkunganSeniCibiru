@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import io.github.lna.uas.lingkungansenicibiru.R;
-import io.github.lna.uas.lingkungansenicibiru.activity.Beranda;
+import io.github.lna.uas.lingkungansenicibiru.activity.ResultbyKelurahan;
 import io.github.lna.uas.lingkungansenicibiru.model.JenisSeni;
 
 public class JenisSeniAdapter extends RecyclerView.Adapter<JenisSeniAdapter.JenisSeniViewHolder>{
@@ -28,8 +28,8 @@ public class JenisSeniAdapter extends RecyclerView.Adapter<JenisSeniAdapter.Jeni
 
         public JenisSeniViewHolder(View itemView) {
             super(itemView);
-           clayout = itemView.findViewById(R.id.main_adapter);
-           cjudul = itemView.findViewById(R.id.nama_kelurahan);
+               clayout = itemView.findViewById(R.id.main_adapter);
+               cjudul = itemView.findViewById(R.id.nama_kelurahan);
         }
     }
 
@@ -54,29 +54,19 @@ public class JenisSeniAdapter extends RecyclerView.Adapter<JenisSeniAdapter.Jeni
     @Override
     public void onBindViewHolder(JenisSeniViewHolder holder, final int position) {
         holder.cjudul.setText(jenisSeniListList.get(position).getNamaJeniskesenian());
-
+        final String id = jenisSeniListList.get(position).getIdJeniskesenian();
+        final String nama = jenisSeniListList.get(position).getNamaJeniskesenian();
         holder.clayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, Beranda.class);
-                i.putExtra("menu", 1);
-                i.putExtra("tab", 2);
+                Intent i = new Intent(context, ResultbyKelurahan.class);
+                i.putExtra("id", id);
+                i.putExtra("kelurahan", nama);
                 context.startActivity(i);
             }
         });
     }
-/*
-    public void getDetail(long id, String judul, String tanggalrilis, String sinopsis, String backdrop, String poster){
-        Intent goToDetail = new Intent(context, DetailActivity.class);
-        goToDetail.putExtra("id", id);
-        goToDetail.putExtra("judul", judul);
-        goToDetail.putExtra("tanggalrilis", tanggalrilis);
-        goToDetail.putExtra("sinopsis", sinopsis);
-        goToDetail.putExtra("backdrop", backdrop);
-        goToDetail.putExtra("poster", poster);
-        context.startActivity(goToDetail);
-    }
-*/
+
     @Override
     public int getItemCount() {
         return jenisSeniListList.size();

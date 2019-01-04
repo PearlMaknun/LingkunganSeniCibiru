@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import io.github.lna.uas.lingkungansenicibiru.R;
-import io.github.lna.uas.lingkungansenicibiru.activity.DetailJenisLingkungan;
+import io.github.lna.uas.lingkungansenicibiru.activity.DetailCadangan;
 import io.github.lna.uas.lingkungansenicibiru.model.LingkunganSeni;
 
 public class LingkunganSeniAdapter extends RecyclerView.Adapter<LingkunganSeniAdapter.LingkunganSeniViewHolder>{
@@ -60,7 +60,7 @@ public class LingkunganSeniAdapter extends RecyclerView.Adapter<LingkunganSeniAd
     @Override
     public void onBindViewHolder(LingkunganSeniViewHolder holder, final int position) {
         final String id = lingkunganSeniList.get(position).getIdLingkunganseni();
-        /*final String nama = lingkunganSeniList.get(position).getNamaLingkunganseni();
+        final String nama = lingkunganSeniList.get(position).getNamaLingkunganseni();
         final String alamat = lingkunganSeniList.get(position).getAlamat();
         final String deskripsi = lingkunganSeniList.get(position).getDeskripsi();
         final String kelurahan = lingkunganSeniList.get(position).getFkKelurahan();
@@ -69,11 +69,11 @@ public class LingkunganSeniAdapter extends RecyclerView.Adapter<LingkunganSeniAd
         final String longtitude = lingkunganSeniList.get(position).getLong();
         final String pimpinan = lingkunganSeniList.get(position).getPimpinan();
         final String jeniskesenian = lingkunganSeniList.get(position).getTagJeniskesenian();
-        final String tahun = lingkunganSeniList.get(position).getTahunBerdiri();*/
+        final String tahun = lingkunganSeniList.get(position).getTahunBerdiri();
 
         holder.cjudul.setText(lingkunganSeniList.get(position).getNamaLingkunganseni());
         holder.cjk.setText(lingkunganSeniList.get(position).getTagJeniskesenian());
-        if(lingkunganSeniList.get(position).getFoto() == ""){
+        if(lingkunganSeniList.get(position).getFoto().length() == 0){
             Glide.with(context)
                     .load(R.drawable.pict_teras)
                     .into(holder.cimage);
@@ -85,9 +85,10 @@ public class LingkunganSeniAdapter extends RecyclerView.Adapter<LingkunganSeniAd
         holder.clayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, DetailJenisLingkungan.class);
+                //Intent i = new Intent(context, DetailJenisLingkungan.class);
+                Intent i = new Intent(context, DetailCadangan.class);
                 i.putExtra("id", id);
-                /*i.putExtra("nama", nama);
+                i.putExtra("nama", nama);
                 i.putExtra("alamat", alamat);
                 i.putExtra("deskripsi", deskripsi);
                 i.putExtra("kelurahan", kelurahan);
@@ -96,7 +97,7 @@ public class LingkunganSeniAdapter extends RecyclerView.Adapter<LingkunganSeniAd
                 i.putExtra("long", longtitude);
                 i.putExtra("pimpinan", pimpinan);
                 i.putExtra("jeniskesenian", jeniskesenian);
-                i.putExtra("tahun", tahun);*/
+                i.putExtra("tahun", tahun);
                 context.startActivity(i);
 
                 /*Intent i = new Intent(context, DetailCadangan.class);

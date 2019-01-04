@@ -24,4 +24,7 @@ public interface ApiService  {
 
     @GET("lingkunganseni/{id}")
     Call<LingkunganSeniResponse> getDetail(@Path("id") String id, @Query("key") String apiKey);
+
+    @GET("lingkunganseni/jeniskesenian/")
+    Call<LingkunganSeniResponse> getLingSenibyJenisSeni(@Query ("keyword") String keyword, @Query("key") String apiKey);
 }
