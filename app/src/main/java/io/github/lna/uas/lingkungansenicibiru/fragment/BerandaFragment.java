@@ -37,10 +37,10 @@ public class BerandaFragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         SectionPageAdapter adapter = new SectionPageAdapter(getActivity().getSupportFragmentManager());
-        String tab1 = String.format(getResources().getString(R.string.discover));
+        //String tab1 = String.format(getResources().getString(R.string.discover));
         String tab2 = String.format(getResources().getString(R.string.kelurahan));
         String tab3 = String.format(getResources().getString(R.string.jeniskesenian));
-        adapter.addFragment(new DiscoverFragment(), tab1);
+        //adapter.addFragment(new DiscoverFragment(), tab1);
         adapter.addFragment(new KelurahanFragment(), tab2);
         adapter.addFragment(new JenisKesenianFragment(), tab3);
         viewPager.setAdapter(adapter);

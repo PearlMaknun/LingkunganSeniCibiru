@@ -15,6 +15,8 @@ public class DetailJenisLingkungan extends AppCompatActivity {
     private SectionPageAdapter sectionPageAdapter;
     ViewPager viewpager;
 
+    String id = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,13 @@ public class DetailJenisLingkungan extends AppCompatActivity {
         sectionPageAdapter = new SectionPageAdapter(getSupportFragmentManager());
         viewpager = findViewById(R.id.viewpager);
         setupViewPager(viewpager);
+
+        id = getIntent().getStringExtra("id");
+
+        Bundle bundle = new Bundle();
+        bundle.putString("id", id);
+        InfoDetailFragment infoDetailFragment = new InfoDetailFragment();
+        infoDetailFragment.setArguments(bundle);
 
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewpager);

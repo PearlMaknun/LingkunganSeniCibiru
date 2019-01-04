@@ -60,6 +60,18 @@ public class LingkunganSeniAdapter extends RecyclerView.Adapter<LingkunganSeniAd
 
     @Override
     public void onBindViewHolder(LingkunganSeniViewHolder holder, final int position) {
+        final String id = lingkunganSeniList.get(position).getIdLingkunganseni();
+        final String nama = lingkunganSeniList.get(position).getNamaLingkunganseni();
+        final String alamat = lingkunganSeniList.get(position).getAlamat();
+        final String deskripsi = lingkunganSeniList.get(position).getDeskripsi();
+        final String kelurahan = lingkunganSeniList.get(position).getFkKelurahan();
+        final String foto = lingkunganSeniList.get(position).getFoto();
+        final String lat = lingkunganSeniList.get(position).getLat();
+        final String longtitude = lingkunganSeniList.get(position).getLong();
+        final String pimpinan = lingkunganSeniList.get(position).getPimpinan();
+        final String jeniskesenian = lingkunganSeniList.get(position).getTagJeniskesenian();
+        final String tahun = lingkunganSeniList.get(position).getTahunBerdiri();
+
         holder.cjudul.setText(lingkunganSeniList.get(position).getNamaLingkunganseni());
         holder.cjk.setText(lingkunganSeniList.get(position).getTagJeniskesenian());
         if(lingkunganSeniList.get(position).getFoto() == ""){
@@ -75,6 +87,17 @@ public class LingkunganSeniAdapter extends RecyclerView.Adapter<LingkunganSeniAd
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, DetailJenisLingkungan.class);
+                i.putExtra("id", id);
+                i.putExtra("nama", nama);
+                i.putExtra("alamat", alamat);
+                i.putExtra("deskripsi", deskripsi);
+                i.putExtra("kelurahan", kelurahan);
+                i.putExtra("foto", foto);
+                i.putExtra("lat", lat);
+                i.putExtra("long", longtitude);
+                i.putExtra("pimpinan", pimpinan);
+                i.putExtra("jeniskesenian", jeniskesenian);
+                i.putExtra("tahun", tahun);
                 context.startActivity(i);
             }
         });
