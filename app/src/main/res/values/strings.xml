@@ -14,11 +14,11 @@
     <string name="about">About</string>
     <string name="loading">Loading....</string>
     <string name="no_internet">No Internet Connection</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="jeniskesenian">TYPE OF ART</string>
     <string name="kelurahan">DISTRICT</string>
+    <string name="info">INFO</string>
+    <string name="review">REVIEW</string>
     <string name="discover">DISCOVER</string>
     <string name="district_picks">DISTRICT PICKS</string>
     <string name="based_on_art">BASED ON ART</string>

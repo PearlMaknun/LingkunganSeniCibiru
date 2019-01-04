@@ -21,9 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ResultbyKelurahan" />
+        <activity android:name=".activity.ResultbyKelurahan">
+        </activity>
         <activity android:name=".activity.ResultbyJenisSeni" />
         <activity android:name=".activity.SearchResult"></activity>
+        <activity android:name=".activity.DetailJenisLingkungan"></activity>
     </application>
 
 </manifest>

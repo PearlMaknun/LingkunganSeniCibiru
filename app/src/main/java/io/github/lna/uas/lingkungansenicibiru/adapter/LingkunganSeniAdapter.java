@@ -1,6 +1,7 @@
 package io.github.lna.uas.lingkungansenicibiru.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import io.github.lna.uas.lingkungansenicibiru.R;
+import io.github.lna.uas.lingkungansenicibiru.activity.DetailJenisLingkungan;
 import io.github.lna.uas.lingkungansenicibiru.model.LingkunganSeni;
 
 public class LingkunganSeniAdapter extends RecyclerView.Adapter<LingkunganSeniAdapter.LingkunganSeniViewHolder>{
@@ -72,22 +74,12 @@ public class LingkunganSeniAdapter extends RecyclerView.Adapter<LingkunganSeniAd
         holder.clayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i = new Intent(context, DetailJenisLingkungan.class);
+                context.startActivity(i);
             }
         });
     }
-    /*
-        public void getDetail(long id, String judul, String tanggalrilis, String sinopsis, String backdrop, String poster){
-            Intent goToDetail = new Intent(context, DetailActivity.class);
-            goToDetail.putExtra("id", id);
-            goToDetail.putExtra("judul", judul);
-            goToDetail.putExtra("tanggalrilis", tanggalrilis);
-            goToDetail.putExtra("sinopsis", sinopsis);
-            goToDetail.putExtra("backdrop", backdrop);
-            goToDetail.putExtra("poster", poster);
-            context.startActivity(goToDetail);
-        }
-    */
+
     @Override
     public int getItemCount() {
         return lingkunganSeniList.size();

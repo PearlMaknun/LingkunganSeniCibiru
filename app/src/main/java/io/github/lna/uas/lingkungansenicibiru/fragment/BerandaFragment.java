@@ -16,8 +16,6 @@ public class BerandaFragment extends Fragment {
     private SectionPageAdapter sectionPageAdapter;
     ViewPager viewpager;
 
-    String tab = null;
-
     public BerandaFragment() {
         // Required empty public constructor
     }

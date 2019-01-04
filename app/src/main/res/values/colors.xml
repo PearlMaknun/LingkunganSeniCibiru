@@ -6,4 +6,5 @@
     <color name="colorAccentTwo">#d7658f</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="blackopacity">#ad000000</color>
 </resources>
